@@ -169,7 +169,7 @@ class EditViewModel @Inject constructor(
                 _isBusy.value = false
                 _checkConnection.value = true
             }.onFailure {
-                _navigationEvent.value = EditNav.CheckConnectionResult(false)
+                _navigationEvent.value = EditNav.CheckConnectionResult(false, it)
                 _isBusy.value = false
                 _checkConnection.value = false
             }

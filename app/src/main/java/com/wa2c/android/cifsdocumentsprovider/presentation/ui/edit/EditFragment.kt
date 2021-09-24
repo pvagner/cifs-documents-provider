@@ -154,7 +154,7 @@ class EditFragment : Fragment(R.layout.fragment_edit) {
                 // Connection check
                 val message =
                     if (event.result) getString(R.string.edit_check_connection_ok_message)
-                    else getString(R.string.edit_check_connection_ng_message)
+                    else event.throwable?.message ?: getString(R.string.edit_check_connection_ng_message)
                 toast(message)
             }
             is EditNav.SaveResult -> {

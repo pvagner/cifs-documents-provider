@@ -23,7 +23,7 @@ class CifsClient @Inject constructor() {
      */
     fun getConnection(user: String? = null, password: String? = null, domain: String? = null, enableDfs: Boolean): CIFSContext {
         val property = Properties().apply {
-            setProperty("jcifs.smb.client.minVersion", "SMB210")
+            setProperty("jcifs.smb.client.minVersion", "SMB202")
             setProperty("jcifs.smb.client.maxVersion", "SMB300")
             setProperty("jcifs.smb.client.responseTimeout", READ_TIMEOUT.toString())
             setProperty("jcifs.smb.client.connTimeout", CONNECTION_TIMEOUT.toString())

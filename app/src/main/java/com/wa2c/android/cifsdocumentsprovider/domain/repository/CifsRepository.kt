@@ -295,7 +295,7 @@ class CifsRepository @Inject constructor(
                 if (e.cause is ConnectionTimeoutException) {
                     ignoreTimeout
                 } else {
-                    false
+                    throw e
                 }
             }
         }
@@ -337,7 +337,7 @@ class CifsRepository @Inject constructor(
                 }
             } catch (e: Exception) {
                 logE(e)
-                null
+                throw e
             }
         }
     }
